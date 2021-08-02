@@ -1,0 +1,71 @@
+//proyectos
+.galeria {
+    display: grid;
+    grid-template-areas: 
+        "imagen1 imagen1 imagen4"
+        "imagen1 imagen1 imagen4"
+        "imagen1 imagen1 imagen5"
+        "imagen2 imagen3 imagen5"
+        "imagen2 imagen3 imagen6"
+        "imagen2 imagen3 imagen6";
+    grid-template-columns:  repeat(3, 1fr) ;
+    grid-template-rows: repeat(6, 1fr) ;
+    height: auto;
+    margin: auto;
+    padding: 20px 0px;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    article a:hover{
+        opacity: 80%;
+    }
+}
+.imagen1 {
+    grid-area: imagen1;   
+}  
+.imagen2 {
+    grid-area: imagen2;    
+}
+.imagen3 {
+    grid-area: imagen3;
+}
+.imagen4 {
+    grid-area: imagen4;
+}  
+.imagen5 {
+    grid-area: imagen5;
+}
+.imagen6 {
+    grid-area: imagen6;
+}
+
+/*media */
+@media only screen and (min-width: 320px){
+    .galeria {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+}    
+ 
+@media only screen and (min-width: 768px){
+    .galeria {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        article{
+            width: 45%;
+        }
+    }
+}    
+
+@media only screen and (min-width: 1024px){
+    .galeria{ 
+        display: grid;
+        width: 80%;
+        margin: auto;
+        article{
+            width: 100%;
+        }
+    }
+}

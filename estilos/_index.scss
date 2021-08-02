@@ -1,0 +1,126 @@
+/* index */
+.estudioIndex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    padding: 20px;
+}
+.txtEstudioIndex{
+    background-color: rgba(250, 250, 250, 0.5);
+    height:fit-content;
+    padding: 10px;
+}
+.conteinerServ{
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-image: url(../imagenes/bgnav.jpg);
+}
+.serviciosIndex {
+    display: grid;
+    grid-template-rows: auto;
+    text-align: center;
+    article{
+        display: flex; 
+        align-items: center;
+        background-position: center;
+        background-size: cover;
+        border-radius: 15px;
+        background-color:rgba(0, 0, 0, 0.1);
+        a {
+            text-decoration: none;
+            color: $colorPrimario;
+            font-size: 20px;
+            padding-bottom: 5px;
+            border-radius: 15px;
+            &:hover{
+                transition: 1s;
+                box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.2);
+                background-image:  url(../imagenes/bgnav.jpg);
+                background-size: cover;
+                transform: scale(1.05, 1.05);
+            }
+            img{
+                padding: 40px;
+                opacity: 70%;
+            }
+            p{
+                font-size: 14px;
+                padding: 10px;
+            }
+            h4{
+                color: $colorPrimario;
+                font-weight: bold;
+            }
+        }
+    }    
+}
+.text-center{
+    padding: 20px;
+    text-shadow: 0 0 0.3em $colorSecundario;
+}
+.proyectosIndex {
+    width: 75%;
+    margin: 40px auto;
+    article div{
+        padding: 10px;
+        &:hover{
+            transition: 1s;
+            transform: scale(0.9, 0.9);
+        }
+    }
+}
+
+//media
+@media only screen and (min-width: 320px){
+    .estudioIndex {
+        width: 100%;
+        flex-direction: column;
+    }
+    .serviciosIndex {
+        grid-template-columns: repeat(1, 1fr);
+        grid-row-gap: 10px;
+        grid-column-gap: 10px;
+        article{
+            width: 90%;
+            justify-self: center;
+            a img{
+                width: 50%;
+                height: auto;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:768px) {
+    .estudioIndex{
+        flex-direction: column;
+    }
+    .serviciosIndex{
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 15px;
+        margin: 15px;
+        article a img{
+            width: 75%;
+        }
+    }
+    
+}
+
+@media only screen and (min-width: 1024px) {
+    .estudioIndex {
+        margin-top: 50px;
+        width: 75%;
+        flex-direction: row;
+    }    
+    .conteinerServ{
+        clip-path: polygon(10% 0%, 100% 0%, 100% 50%, 90% 100%, 0% 100%, 0% 50%);
+    }
+    .serviciosIndex{
+        grid-template-columns: repeat(4, 1fr);
+        width: 75%;
+        margin: auto;
+    }
+}
