@@ -24,7 +24,7 @@ h1 {
     margin:8px;
 }
 h2{
-    font-size: 30px;
+    font-size: 2rem;
     padding: 15px;
     margin-bottom: 10px;
     text-align: center;
@@ -54,7 +54,10 @@ a{
     text-shadow: -2px 2px rgba(0, 0, 0, 0.3);
     padding: 15px;
 }
-
+.text-center{
+    padding: 20px 20px  ;
+    text-shadow: 0 0 0.3em $colorSecundario;
+    }
 //header
 header {
     width: 100%;
@@ -64,7 +67,7 @@ header {
 .navbar {
     display: flex;
     background-image:  url(../imagenes/bgnav.jpg);
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
     padding: 0px;
     height: 12vh;
     border-bottom: 5px solid $colorSecundario;
@@ -72,15 +75,20 @@ header {
     div{
         width: 80%;
         margin: auto;
+        .navbar-brand{
+            width: auto;
+        }
+       
     }
 }
+
 .navbar-nav{
     justify-content: space-evenly;
-    width: 50%;
+    align-items: center;
     li a{
         text-decoration: none;
         color: black;
-        font-size: 16px;
+        font-size: 18px;
         &:hover{
             color: $colorPrimario;
             border-bottom-style: solid;
@@ -90,9 +98,7 @@ header {
         }
     }
 }
-.navbar-brand{
-    width: auto;
-}
+
 
 //body
 body {
@@ -131,15 +137,20 @@ footer {
 
 //media
 @media only screen and (min-width: 320px){
-    .navbar-nav{
-        align-items: flex-end;
+    
+    .navbar div{
         width: 100%;
+        .menu {
+            background-color: $bcgmenu;
+            opacity: 0.9;
+            padding: 10px;
+            .navbar-nav{
+                height: 80vh;
+                width: 100%;
+            }
+        }
     }
-    .menu {
-        background-color: $bcgmenu;
-        opacity: 0.9;
-        padding: 10px;
-    }
+    
     footer {
         display: flex;
         flex-direction: column-reverse;
@@ -150,14 +161,20 @@ footer {
     }
 }
 
-@media only screen and (min-width:768px) {
-    
-    .menu{
-        background-color:initial
-    }
-    .navbar-nav{
-        align-items: center;
-        width: 90%;
+@media only screen and (min-width: 768px) {
+
+    .navbar div {
+        width: 80%;
+        .menu{
+            background-color:initial;
+            height: 12vh;
+            justify-content:flex-end;
+            .navbar-nav{
+                align-items: center;
+                width: 90%;
+                height: 12vh;
+            }
+        }
     }
     footer {
         display: flex;
@@ -170,9 +187,16 @@ footer {
 }
 
 @media only screen and (min-width: 1024px) {
-    .navbar-nav{
-        align-items: center;
-        width: 50%;
+
+    .navbar div{
+        .menu{
+            .navbar-nav{
+                align-items: center;
+                width: 70%;
+            }
+        }
+
     }
+    
 }    
 
