@@ -93,11 +93,32 @@
             padding: 50px;
             left: 50px;
             height: fit-content;
+            animation-duration: 1s;
+            animation-name: fadeLeft;
+        }
+        @keyframes fadeLeft {
+            from{
+                transform: translateX(-200px);
+            }
+            to{transform: translateX(0px);}
+        }
+        .carouselEstudio{
+            width: auto;
+            animation-duration: 1s;
+            animation-name: fadeRight;
+        }
+        @keyframes fadeRight{
+            from {
+              transform: translateX(200px);
+            }
+          
+            to {
+              transform: translateX(0px);
+            }
         }
     }
-    .carouselEstudio{
-        width: auto;
-    }
+
+      
     .equipo {
         display: grid;
     }
